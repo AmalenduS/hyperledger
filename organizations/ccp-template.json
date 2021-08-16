@@ -15,31 +15,31 @@
         "Org${ORG}": {
             "mspid": "Org${ORG}MSP",
             "peers": [
-                "peer0.org${ORG}.solulab.com"
+                "peer0.org${ORG}.example.com"
             ],
             "certificateAuthorities": [
-                "ca.org${ORG}.solulab.com"
+                "ca.org${ORG}.example.com"
             ]
         }
     },
     "peers": {
-        "peer0.org${ORG}.solulab.com": {
+        "peer0.org${ORG}.example.com": {
             "url": "grpcs://localhost:${P0PORT}",
             "tlsCACerts": {
                 "pem": "${PEERPEM}"
             },
             "grpcOptions": {
-                "ssl-target-name-override": "peer0.org${ORG}.solulab.com",
-                "hostnameOverride": "peer0.org${ORG}.solulab.com"
+                "ssl-target-name-override": "peer0.org${ORG}.example.com",
+                "hostnameOverride": "peer0.org${ORG}.example.com"
             }
         }
     },
     "certificateAuthorities": {
-        "ca.org${ORG}.solulab.com": {
+        "ca.org${ORG}.example.com": {
             "url": "https://localhost:${CAPORT}",
             "caName": "ca-org${ORG}",
             "tlsCACerts": {
-                "pem": "${CAPEM}"
+                "pem": ["${CAPEM}"]
             },
             "httpOptions": {
                 "verify": false
